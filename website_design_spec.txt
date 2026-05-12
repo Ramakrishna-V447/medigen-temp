@@ -1,0 +1,64 @@
+# MediGen - App Specifications & Design Language
+
+## 1. Project Overview
+Project Name: MediGen
+Tagline: Smart Healthcare Comparisons
+Description: A comprehensive healthcare platform for comparing generic and branded medicines, viewing usage details, and saving money on healthcare costs.
+Core Architecture: React (TypeScript) + Vite + Tailwind CSS
+
+## 2. Design Language & Styling (Tailwind CSS)
+### Typography
+- Primary Font: 'Outfit', sans-serif (Google Fonts)
+
+### Color Palette (Tailwind Custom Config)
+- background (Light Grey): #F8FAFC
+- surface (White): #FFFFFF
+- text (Grey/Slate 600): #475569
+- dark (Dark Grey Headings/Slate 800): #1E293B
+- primary (Teal 600 - Main Brand): #0D9488
+- secondary (Sky 400 - Secondary Brand): #38BDF8
+- accent (Sky 500 - Vibrant Accent): #0EA5E9
+- mint (Teal 50 - Very Light Teal): #F0FDFA
+- pastel.blue (Sky 100): #E0F2FE
+- pastel.green (Teal 100): #CCFBF1
+
+### Theme & Styling Strategy
+- Dark Mode: Full support via Tailwind 'class' strategy (e.g. `dark:bg-slate-900`, `dark:text-slate-100`).
+- Custom Scrollbar: Sleek, lightweight standard scrollbar (`#F8FAFC` track, `#CBD5E1` thumb).
+- Image Filters: Soft image filter utility class `.img-soft` (`brightness(1.05) saturate(0.95)`).
+
+### Animations
+- `fade-in`: 0.6s ease-out
+- `slide-up`: 0.6s ease-out translates 30px up
+- `pulse-slow`: 3s smooth pulsing effect
+
+## 3. Application Structure & Pages
+### Core User Interfaces
+- Navbar: Global top navigation
+- Toast Notifications: Custom floating notification system for alerts
+- AI ChatBot: Floating assistance interface powered by Gemini
+- Footer: Disclaimer and copyright info
+
+### Pages / Routes
+1. Home Page (`/`)
+2. Saved / Bookmarks Page (`/saved`)
+3. Cart Page (`/cart`)
+4. Checkout Page (`/checkout`)
+5. Order Tracking (`/track-order`)
+6. Stores Locator (`/stores`)
+7. Medicine Details (`/medicine/:id`)
+8. Admin Login (`/admin/login`)
+9. Admin Dashboard (`/admin`)
+
+*(Note: The Prescription Scanner feature was recently removed as per updates).*
+
+## 4. State Management (React Contexts)
+- `AuthProvider`: Manages user authentication and user profiles.
+- `BookmarkProvider`: Manages saved/bookmarked medicines.
+- `CartProvider`: Manages e-commerce shopping cart items and quantities.
+- `ThemeProvider`: Manages light/dark mode preferences.
+
+## 5. Key Services (Backend/Integrations)
+- `db.ts`: Database interaction.
+- `emailService.ts`: System email notification handlers.
+- `geminiService.ts`: Integration with Google Gemini for interpreting queries in the AI ChatBot.

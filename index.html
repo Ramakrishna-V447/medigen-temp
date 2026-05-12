@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediGen - Compare & Save</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Outfit', 'sans-serif'],
+            },
+            colors: {
+              pastel: {
+                blue: '#E0F2FE', // Sky 100 - Light Blue Background
+                green: '#CCFBF1', // Teal 100 - Light Teal Background
+                mint: '#F0FDFA', // Teal 50 - Very Light Teal/White
+                primary: '#0D9488', // Teal 600 - Main Brand Color (Teal)
+                secondary: '#38BDF8', // Sky 400 - Secondary Brand Color (Light Blue)
+                accent: '#0EA5E9', // Sky 500 - Vibrant Light Blue Accent
+                text: '#475569', // Slate 600 - Grey Text
+                dark: '#1E293B', // Slate 800 - Dark Grey Headings
+                surface: '#FFFFFF', // White
+                background: '#F8FAFC', // Slate 50 - Light Grey Background
+              }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-out',
+              'slide-up': 'slideUp 0.6s ease-out',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(30px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+<style>
+  /* Custom Scrollbar for lighter look */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F8FAFC;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+  }
+  
+  /* Soft Image Filter */
+  .img-soft {
+    filter: brightness(1.05) saturate(0.95);
+  }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-pastel-background text-pastel-text antialiased selection:bg-pastel-primary selection:text-white dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
